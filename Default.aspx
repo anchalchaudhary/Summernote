@@ -17,13 +17,13 @@
 
 <body>
     <form id="form1" runat="server">
-    <div id="summernote">Hello Summernote</div>
+    <div id="summernote">Testing</div>
     <script>
     $(document).ready(function() {
         $('#summernote').summernote({
             height: 300,                
-            minHeight: null,            
-            maxHeight: null,            
+            minHeight: 50,            
+            maxHeight: 400,            
             focus: true
         });
     });
