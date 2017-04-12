@@ -17,8 +17,10 @@
 
 <body>
     <form id="form1" runat="server">
+        <asp:Label ID="lblTitle" runat="server" Text="Title"></asp:Label>
+        <asp:TextBox ID="tbxTitle" runat="server"></asp:TextBox>
         <asp:TextBox ID="summernote" runat="server"></asp:TextBox>
-        <asp:Button ID="btnGetHtml" runat="server" Text="Get HTML" OnClientClick="MyHTML();"  OnClick="btnGetHtml_Click"/>
+        <asp:Button ID="btnGetHtml" runat="server" Text="Save" OnClientClick="MyHTML();"  OnClick="btnGetHtml_Click"/>
         <asp:HiddenField ID="myHtml" runat="server" />
        
         <script>

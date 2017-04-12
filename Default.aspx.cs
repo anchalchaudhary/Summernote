@@ -14,10 +14,11 @@ public partial class _Default : System.Web.UI.Page
         string CS = ConfigurationManager.ConnectionStrings["SummernoteCS"].ConnectionString;
         using (SqlConnection connect = new SqlConnection(CS))
         {
-            using (SqlCommand cmd = new SqlCommand("insert into tblTypedText (Text) values (@Text)"))
+            using (SqlCommand cmd = new SqlCommand("insert into tblTypedText (Title, Text) values (@Title, @Text)"))
             {
                 cmd.Connection = connect;
                 connect.Open();
+                cmd.Parameters.AddWithValue("@Title", tbxTitle.Text.Trim());
                 cmd.Parameters.AddWithValue("@Text", htmlCode);
                 cmd.ExecuteNonQuery();
             }
