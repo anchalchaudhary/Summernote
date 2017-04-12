@@ -5,6 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Summer Note</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
     <!-- include libraries(jQuery, bootstrap) -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet" />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
@@ -17,12 +23,17 @@
 
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="lblTitle" runat="server" Text="Title"></asp:Label>
-        <asp:TextBox ID="tbxTitle" runat="server"></asp:TextBox>
-        <asp:TextBox ID="summernote" runat="server"></asp:TextBox>
-        <asp:Button ID="btnGetHtml" runat="server" Text="Save" OnClientClick="MyHTML();"  OnClick="btnGetHtml_Click"/>
-        <asp:HiddenField ID="myHtml" runat="server" />
-       
+        <div>&nbsp</div>
+        <div class="input-field col m4">
+            <i class="large material-icons prefix" style="font-size:30px">mode_edit</i>
+            <asp:TextBox ID="tbxTitle" class="materialize-textarea"  runat="server" placeholder="Title" Font-Size="Large"></asp:TextBox>
+            <asp:Label ID="lblTitle" for="tbxTitle" runat="server" Font-Bold="true"></asp:Label>&nbsp
+        </div>
+        <div>
+            <asp:TextBox ID="summernote" runat="server"></asp:TextBox>
+            <asp:Button ID="btnGetHtml" runat="server" Text="Save" OnClientClick="MyHTML();" OnClick="btnGetHtml_Click" />
+            <asp:HiddenField ID="myHtml" runat="server" />
+        </div>
         <script>
             $(document).ready(function () {
                 $('#summernote').summernote({
