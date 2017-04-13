@@ -9,15 +9,20 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Repeater ID="RepeaterTitle" runat="server" OnItemCommand="RepeaterTitle_ItemCommand">
-                <ItemTemplate>
-                    <tr>
-                        <td>
-                            <asp:LinkButton ID="lblTitle" runat="server" Text='<%#Eval("Title") %>'></asp:LinkButton>
-                        </td>
-                    </tr>
-                </ItemTemplate>
-            </asp:Repeater>
+            <table>
+                <asp:Repeater ID="RepeaterTitle" runat="server" OnItemCommand="RepeaterTitle_ItemCommand">
+                    <ItemTemplate>
+                        <tr>
+                            <td>
+                                <asp:LinkButton ID="lblTitle" runat="server" Text='<%#Eval("Title") %>'></asp:LinkButton>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </table>
         </div>
     </form>
 </body>
